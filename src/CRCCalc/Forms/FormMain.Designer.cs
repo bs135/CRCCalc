@@ -34,6 +34,7 @@
             this.txtResult = new System.Windows.Forms.TextBox();
             this.btnCalc = new System.Windows.Forms.Button();
             this.grpOption = new System.Windows.Forms.GroupBox();
+            this.llbCheckupdate = new System.Windows.Forms.LinkLabel();
             this.lnkMoreOption = new System.Windows.Forms.LinkLabel();
             this.chkReflectedResult = new System.Windows.Forms.CheckBox();
             this.chkCustomInitialValue = new System.Windows.Forms.CheckBox();
@@ -53,7 +54,6 @@
             this.llbFormatInfo = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
-            this.llbCheckupdate = new System.Windows.Forms.LinkLabel();
             this.grpOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPolynomial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epInitialValue)).BeginInit();
@@ -61,27 +61,27 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // txtInput
-            //
+            // 
             this.txtInput.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput.Location = new System.Drawing.Point(15, 24);
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(384, 24);
             this.txtInput.TabIndex = 0;
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
-            //
+            // 
             // txtResult
-            //
+            // 
             this.txtResult.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtResult.Location = new System.Drawing.Point(15, 24);
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
             this.txtResult.Size = new System.Drawing.Size(256, 24);
             this.txtResult.TabIndex = 3;
-            //
+            // 
             // btnCalc
-            //
+            // 
             this.btnCalc.Location = new System.Drawing.Point(278, 24);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(121, 24);
@@ -89,9 +89,9 @@
             this.btnCalc.Text = "Calc";
             this.btnCalc.UseVisualStyleBackColor = true;
             this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
-            //
+            // 
             // grpOption
-            //
+            // 
             this.grpOption.Controls.Add(this.llbCheckupdate);
             this.grpOption.Controls.Add(this.lnkMoreOption);
             this.grpOption.Controls.Add(this.chkReflectedResult);
@@ -109,9 +109,20 @@
             this.grpOption.TabIndex = 6;
             this.grpOption.TabStop = false;
             this.grpOption.Text = "Options";
-            //
+            // 
+            // llbCheckupdate
+            // 
+            this.llbCheckupdate.AutoSize = true;
+            this.llbCheckupdate.Location = new System.Drawing.Point(331, 170);
+            this.llbCheckupdate.Name = "llbCheckupdate";
+            this.llbCheckupdate.Size = new System.Drawing.Size(89, 13);
+            this.llbCheckupdate.TabIndex = 16;
+            this.llbCheckupdate.TabStop = true;
+            this.llbCheckupdate.Text = "Check for update";
+            this.llbCheckupdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbCheckupdate_LinkClicked);
+            // 
             // lnkMoreOption
-            //
+            // 
             this.lnkMoreOption.BackColor = System.Drawing.Color.Transparent;
             this.lnkMoreOption.Location = new System.Drawing.Point(308, 7);
             this.lnkMoreOption.Name = "lnkMoreOption";
@@ -121,9 +132,9 @@
             this.lnkMoreOption.Text = "hide options..";
             this.lnkMoreOption.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.lnkMoreOption.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkMoreOption_LinkClicked);
-            //
+            // 
             // chkReflectedResult
-            //
+            // 
             this.chkReflectedResult.AutoSize = true;
             this.chkReflectedResult.Location = new System.Drawing.Point(118, 162);
             this.chkReflectedResult.Name = "chkReflectedResult";
@@ -132,9 +143,9 @@
             this.chkReflectedResult.Text = "Reflected Result";
             this.chkReflectedResult.UseVisualStyleBackColor = true;
             this.chkReflectedResult.CheckedChanged += new System.EventHandler(this.chkReflectedResult_CheckedChanged);
-            //
+            // 
             // chkCustomInitialValue
-            //
+            // 
             this.chkCustomInitialValue.AutoSize = true;
             this.chkCustomInitialValue.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkCustomInitialValue.Location = new System.Drawing.Point(47, 128);
@@ -145,9 +156,9 @@
             this.chkCustomInitialValue.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.chkCustomInitialValue.UseVisualStyleBackColor = true;
             this.chkCustomInitialValue.CheckedChanged += new System.EventHandler(this.chkCustomInitialValue_CheckedChanged);
-            //
+            // 
             // chkCustomPolynomial
-            //
+            // 
             this.chkCustomPolynomial.AutoSize = true;
             this.chkCustomPolynomial.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkCustomPolynomial.Location = new System.Drawing.Point(47, 59);
@@ -158,9 +169,9 @@
             this.chkCustomPolynomial.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.chkCustomPolynomial.UseVisualStyleBackColor = true;
             this.chkCustomPolynomial.CheckedChanged += new System.EventHandler(this.chkCustomPolynomial_CheckedChanged);
-            //
+            // 
             // txtPolynomial
-            //
+            // 
             this.txtPolynomial.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPolynomial.Location = new System.Drawing.Point(118, 60);
             this.txtPolynomial.Name = "txtPolynomial";
@@ -168,9 +179,9 @@
             this.txtPolynomial.Size = new System.Drawing.Size(179, 22);
             this.txtPolynomial.TabIndex = 11;
             this.txtPolynomial.TextChanged += new System.EventHandler(this.txtPolynomial_TextChanged);
-            //
+            // 
             // txtInitialValue
-            //
+            // 
             this.txtInitialValue.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInitialValue.Location = new System.Drawing.Point(118, 125);
             this.txtInitialValue.Name = "txtInitialValue";
@@ -178,18 +189,18 @@
             this.txtInitialValue.Size = new System.Drawing.Size(179, 22);
             this.txtInitialValue.TabIndex = 10;
             this.txtInitialValue.TextChanged += new System.EventHandler(this.txtInitialValue_TextChanged);
-            //
+            // 
             // label6
-            //
+            // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(47, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Initial Value";
-            //
+            // 
             // cmbInitialValue
-            //
+            // 
             this.cmbInitialValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbInitialValue.FormattingEnabled = true;
             this.cmbInitialValue.Location = new System.Drawing.Point(118, 98);
@@ -197,18 +208,18 @@
             this.cmbInitialValue.Size = new System.Drawing.Size(179, 21);
             this.cmbInitialValue.TabIndex = 7;
             this.cmbInitialValue.SelectedIndexChanged += new System.EventHandler(this.cmbInitialValue_SelectedIndexChanged);
-            //
+            // 
             // label4
-            //
+            // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(47, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Polynomial";
-            //
+            // 
             // cmbPolynomial
-            //
+            // 
             this.cmbPolynomial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPolynomial.FormattingEnabled = true;
             this.cmbPolynomial.Location = new System.Drawing.Point(118, 33);
@@ -216,19 +227,19 @@
             this.cmbPolynomial.Size = new System.Drawing.Size(179, 21);
             this.cmbPolynomial.TabIndex = 0;
             this.cmbPolynomial.SelectedIndexChanged += new System.EventHandler(this.cmbPolynomial_SelectedIndexChanged);
-            //
+            // 
             // epPolynomial
-            //
+            // 
             this.epPolynomial.ContainerControl = this;
             this.epPolynomial.Icon = ((System.Drawing.Icon)(resources.GetObject("epPolynomial.Icon")));
-            //
+            // 
             // epInitialValue
-            //
+            // 
             this.epInitialValue.ContainerControl = this;
             this.epInitialValue.Icon = ((System.Drawing.Icon)(resources.GetObject("epInitialValue.Icon")));
-            //
+            // 
             // optString
-            //
+            // 
             this.optString.AutoSize = true;
             this.optString.Location = new System.Drawing.Point(297, 54);
             this.optString.Name = "optString";
@@ -236,9 +247,9 @@
             this.optString.TabIndex = 7;
             this.optString.Text = "String";
             this.optString.UseVisualStyleBackColor = true;
-            //
+            // 
             // optHex
-            //
+            // 
             this.optHex.AutoSize = true;
             this.optHex.Checked = true;
             this.optHex.Location = new System.Drawing.Point(355, 54);
@@ -249,14 +260,14 @@
             this.optHex.Text = "Hex";
             this.optHex.UseVisualStyleBackColor = true;
             this.optHex.CheckedChanged += new System.EventHandler(this.optHex_CheckedChanged);
-            //
+            // 
             // epInput
-            //
+            // 
             this.epInput.ContainerControl = this;
             this.epInput.Icon = ((System.Drawing.Icon)(resources.GetObject("epInput.Icon")));
-            //
+            // 
             // groupBox2
-            //
+            // 
             this.groupBox2.Controls.Add(this.llbFormatInfo);
             this.groupBox2.Controls.Add(this.txtInput);
             this.groupBox2.Controls.Add(this.optHex);
@@ -267,9 +278,9 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Input";
-            //
+            // 
             // llbFormatInfo
-            //
+            // 
             this.llbFormatInfo.AutoSize = true;
             this.llbFormatInfo.Location = new System.Drawing.Point(12, 56);
             this.llbFormatInfo.Name = "llbFormatInfo";
@@ -278,9 +289,9 @@
             this.llbFormatInfo.TabStop = true;
             this.llbFormatInfo.Text = "Hex format?";
             this.llbFormatInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbFormatInfo_LinkClicked);
-            //
+            // 
             // groupBox3
-            //
+            // 
             this.groupBox3.Controls.Add(this.btnCalc);
             this.groupBox3.Controls.Add(this.txtResult);
             this.groupBox3.Location = new System.Drawing.Point(12, 102);
@@ -289,20 +300,9 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Result";
-            //
-            // llbCheckupdate
-            //
-            this.llbCheckupdate.AutoSize = true;
-            this.llbCheckupdate.Location = new System.Drawing.Point(310, 64);
-            this.llbCheckupdate.Name = "llbCheckupdate";
-            this.llbCheckupdate.Size = new System.Drawing.Size(89, 13);
-            this.llbCheckupdate.TabIndex = 16;
-            this.llbCheckupdate.TabStop = true;
-            this.llbCheckupdate.Text = "Check for update";
-            this.llbCheckupdate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbCheckupdate_LinkClicked);
-            //
+            // 
             // FormMain
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 373);

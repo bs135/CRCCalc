@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sharpUpdate>
     <update appID="CRCCalc">
-        <version>2.0.0</version>
+        <version>1.0.0.0</version>
         <url>https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.0/CRCCalc.exe</url>
         <fileName>CRCCalc.exe</fileName>
         <md5>FCFFB77B796F7A65BA8E996A75DDEEEE</md5>
