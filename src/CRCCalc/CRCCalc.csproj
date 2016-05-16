@@ -7,8 +7,8 @@
     <ProjectGuid>{161E86EC-5C5D-443D-B9A5-4680968C6339}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CRC16Calc</RootNamespace>
-    <AssemblyName>CRC16Calc</AssemblyName>
+    <RootNamespace>CRCCalc</RootNamespace>
+    <AssemblyName>CRCCalc</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -68,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
