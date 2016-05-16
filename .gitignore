@@ -20,6 +20,8 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
+!ReleaseDownload/*.exe
+!ReleaseDownload/*/*.exe
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -236,5 +238,3 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 
-#release
-!bin/Release/CRCCalc.exe
