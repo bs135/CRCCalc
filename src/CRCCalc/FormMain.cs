@@ -14,6 +14,8 @@ namespace CRCCalc
     public partial class FormMain : Form
     {
         CRC16 crc16 = new CRC16(ECrcInitialValue.Zeros, ECrcPolynomial.CRC16_IBM, false);
+        StringBuilder msgHexFormatHelpString = new StringBuilder();
+
 
         public FormMain()
         {
@@ -57,6 +59,16 @@ namespace CRCCalc
             cmbInitialValue.Text = "Zeros";
 
             lnkMoreOption_LinkClicked(null, null);
+
+            msgHexFormatHelpString.AppendLine("Hex number format supported:");
+            //msgStr.AppendLine("[1]." + HexUtils.regexHex1.ToString());
+            msgHexFormatHelpString.AppendLine("[1]   $12$ca$fe");
+            //msgStr.AppendLine("[2]." + HexUtils.regexHex2.ToString());
+            msgHexFormatHelpString.AppendLine("[2]   0x123cafe");
+            //msgStr.AppendLine("[3]." + HexUtils.regexHex3.ToString());
+            msgHexFormatHelpString.AppendLine("[3]   123cafe");
+
+            toolTipMain.SetToolTip(llbFormatInfo, msgHexFormatHelpString.ToString());
         }
 
         private void cmbPolynomial_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,7 +153,7 @@ namespace CRCCalc
 
         private void optHex_CheckedChanged(object sender, EventArgs e)
         {
-            lblHexFormat.Visible = optHex.Checked;
+            llbFormatInfo.Visible = optHex.Checked;
             txtInput_TextChanged(null, null);
         }
 
@@ -159,6 +171,13 @@ namespace CRCCalc
                 grpOption.Height -= 165;
                 this.Height -= 165;
             }
+        }
+
+        private void llbFormatInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+
+            MessageBox.Show(msgHexFormatHelpString.ToString());
         }
 
     }

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.txtInput = new System.Windows.Forms.TextBox();
-            this.lblHexFormat = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.btnCalc = new System.Windows.Forms.Button();
             this.grpOption = new System.Windows.Forms.GroupBox();
@@ -52,6 +51,8 @@
             this.epInput = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.llbFormatInfo = new System.Windows.Forms.LinkLabel();
+            this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
             this.grpOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPolynomial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epInitialValue)).BeginInit();
@@ -68,15 +69,6 @@
             this.txtInput.Size = new System.Drawing.Size(384, 24);
             this.txtInput.TabIndex = 0;
             this.txtInput.TextChanged += new System.EventHandler(this.txtInput_TextChanged);
-            // 
-            // lblHexFormat
-            // 
-            this.lblHexFormat.AutoSize = true;
-            this.lblHexFormat.Location = new System.Drawing.Point(12, 56);
-            this.lblHexFormat.Name = "lblHexFormat";
-            this.lblHexFormat.Size = new System.Drawing.Size(183, 13);
-            this.lblHexFormat.TabIndex = 2;
-            this.lblHexFormat.Text = "Hex format: $12$34$56 or 0x123cafe";
             // 
             // txtResult
             // 
@@ -263,10 +255,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.llbFormatInfo);
             this.groupBox2.Controls.Add(this.txtInput);
             this.groupBox2.Controls.Add(this.optHex);
             this.groupBox2.Controls.Add(this.optString);
-            this.groupBox2.Controls.Add(this.lblHexFormat);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(425, 84);
@@ -284,6 +276,17 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Result";
+            // 
+            // llbFormatInfo
+            // 
+            this.llbFormatInfo.AutoSize = true;
+            this.llbFormatInfo.Location = new System.Drawing.Point(12, 56);
+            this.llbFormatInfo.Name = "llbFormatInfo";
+            this.llbFormatInfo.Size = new System.Drawing.Size(64, 13);
+            this.llbFormatInfo.TabIndex = 9;
+            this.llbFormatInfo.TabStop = true;
+            this.llbFormatInfo.Text = "Hex format?";
+            this.llbFormatInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbFormatInfo_LinkClicked);
             // 
             // FormMain
             // 
@@ -315,7 +318,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtInput;
-        private System.Windows.Forms.Label lblHexFormat;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.GroupBox grpOption;
@@ -336,6 +338,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.LinkLabel lnkMoreOption;
+        private System.Windows.Forms.LinkLabel llbFormatInfo;
+        private System.Windows.Forms.ToolTip toolTipMain;
     }
 }
 
