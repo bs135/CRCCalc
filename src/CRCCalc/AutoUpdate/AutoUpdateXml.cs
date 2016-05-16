@@ -3,12 +3,13 @@ using System.Net;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace AutoUpdater
+namespace AutoUpdate
 {
+
     /// <summary>
     /// Contains update information
     /// </summary>
-    internal class SharpUpdateXml
+    internal class AutoUpdateXml
     {
         private Version version;
         private Uri uri;
@@ -76,9 +77,9 @@ namespace AutoUpdater
         }
 
         /// <summary>
-        /// Creates a new SharpUpdateXml object
+        /// Creates a new AutoUpdateXml object
         /// </summary>
-        internal SharpUpdateXml(Version version, Uri uri, string fileName, string md5, string description, string launchArgs, bool showMessage)
+        internal AutoUpdateXml(Version version, Uri uri, string fileName, string md5, string description, string launchArgs, bool showMessage)
         {
             this.version = version;
             this.uri = uri;
@@ -120,12 +121,12 @@ namespace AutoUpdater
         }
 
         /// <summary>
-        /// Parses the update.xml into SharpUpdateXml object
+        /// Parses the update.xml into AutoUpdateXml object
         /// </summary>
         /// <param name="location">Uri of update.xml on server</param>
         /// <param name="appID">The application's ID</param>
-        /// <returns>The SharpUpdateXml object with the data, or null of any errors</returns>
-        internal static SharpUpdateXml Parse(Uri location, string appID, bool showMessage)
+        /// <returns>The AutoUpdateXml object with the data, or null of any errors</returns>
+        internal static AutoUpdateXml Parse(Uri location, string appID, bool showMessage)
         {
             Version version = null;
             string url = "", fileName = "", md5 = "", description = "", launchArgs = "";
@@ -153,7 +154,7 @@ namespace AutoUpdater
                 description = updateNode["description"].InnerText;
                 launchArgs = updateNode["launchArgs"].InnerText;
 
-                return new SharpUpdateXml(version, new Uri(url), fileName, md5, description, launchArgs, showMessage);
+                return new AutoUpdateXml(version, new Uri(url), fileName, md5, description, launchArgs, showMessage);
             }
 			catch { return null; }
         }

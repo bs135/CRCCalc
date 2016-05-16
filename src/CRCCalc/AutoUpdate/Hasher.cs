@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace AutoUpdater
+namespace AutoUpdate
 {
     /// <summary>
     /// The type of hash to create

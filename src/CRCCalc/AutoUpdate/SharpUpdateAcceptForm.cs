@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AutoUpdater
+namespace AutoUpdate
 {
     /// <summary>
     /// Form to prompt the user to accept the update
@@ -16,7 +16,7 @@ namespace AutoUpdater
         /// <summary>
         /// The update info from the update.xml
         /// </summary>
-        private SharpUpdateXml updateInfo;
+        private AutoUpdateXml updateInfo;
 
         /// <summary>
         /// The update info display form
@@ -28,7 +28,7 @@ namespace AutoUpdater
         /// </summary>
         /// <param name="applicationInfo"></param>
         /// <param name="updateInfo"></param>
-        internal SharpUpdateAcceptForm(IAutoUpdatable applicationInfo, SharpUpdateXml updateInfo)
+        internal SharpUpdateAcceptForm(IAutoUpdatable applicationInfo, AutoUpdateXml updateInfo)
         {
             InitializeComponent();
 

@@ -3,10 +3,10 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace AutoUpdater
+namespace AutoUpdate
 {
     /// <summary>
-    /// The interface that all applications need to implement in order to use AutoUpdater
+    /// The interface that all applications need to implement in order to use AutoUpdate
     /// </summary>
     public interface IAutoUpdatable
     {
@@ -37,7 +37,9 @@ namespace AutoUpdater
         /// Console Apps, reference System.Windows.Forms and return null.
         /// </summary>
         Form Context { get; }
-
+        /// <summary>
+        ///
+        /// </summary>
         Boolean ShowMessage { get; set; }
     }
 }

@@ -4,12 +4,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace AutoUpdater
+namespace AutoUpdate
 {
     /// <summary>
     /// Provides application update support in C#
     /// </summary>
-    public class AutoUpdate
+    public class AutoUpdater
     {
         /// <summary>
         /// Holds the program-to-update's info
@@ -22,12 +22,12 @@ namespace AutoUpdater
         private BackgroundWorker bgWorker;
 
         /// <summary>
-        /// Creates a new AutoUpdater object
+        /// Creates a new AutoUpdate object
         /// </summary>
         /// <param name="applicationName">The name of the application so it can be displayed on dialog boxes to user</param>
         /// <param name="appId">A unique Id for the application, same as in update xml</param>
         /// <param name="updateXmlLocation">The Uri for the program's update.xml</param>
-        public AutoUpdate(IAutoUpdatable applicationInfo)
+        public AutoUpdater(IAutoUpdatable applicationInfo)
         {
             this.applicationInfo = applicationInfo;
 
@@ -57,10 +57,10 @@ namespace AutoUpdater
             IAutoUpdatable application = (IAutoUpdatable)e.Argument;
 
             // Check for update on server
-			if (!SharpUpdateXml.ExistsOnServer(application.UpdateXmlLocation))
+			if (!AutoUpdateXml.ExistsOnServer(application.UpdateXmlLocation))
 				e.Cancel = true;
 			else // Parse update xml
-				e.Result = SharpUpdateXml.Parse(application.UpdateXmlLocation, application.ApplicationID, application.ShowMessage);
+				e.Result = AutoUpdateXml.Parse(application.UpdateXmlLocation, application.ApplicationID, application.ShowMessage);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace AutoUpdater
             // If there is a file on the server
 			if (!e.Cancelled)
 			{
-				SharpUpdateXml update = (SharpUpdateXml)e.Result;
+				AutoUpdateXml update = (AutoUpdateXml)e.Result;
 
 				// Check if the update is not null and is a newer version than the current application
 				if (update != null && update.IsNewerThan(this.applicationInfo.ApplicationAssembly.GetName().Version))
@@ -93,7 +93,7 @@ namespace AutoUpdater
         /// Downloads update and installs the update
         /// </summary>
         /// <param name="update">The update xml info</param>
-        private void DownloadUpdate(SharpUpdateXml update)
+        private void DownloadUpdate(AutoUpdateXml update)
         {
             SharpUpdateDownloadForm form = new SharpUpdateDownloadForm(update.Uri, update.MD5, this.applicationInfo.ApplicationIcon);
             DialogResult result = form.ShowDialog(this.applicationInfo.Context);

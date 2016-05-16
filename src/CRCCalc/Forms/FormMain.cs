@@ -1,4 +1,4 @@
-﻿using AutoUpdater;
+﻿using AutoUpdate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +17,7 @@ namespace CRCCalc
     {
         CRC16 crc16 = new CRC16(ECrcInitialValue.Zeros, ECrcPolynomial.CRC16_IBM, false);
         StringBuilder msgHexFormatHelpString = new StringBuilder();
-        private AutoUpdate updater;
+        private AutoUpdater updater;
         bool showMessage = false;
 
         public FormMain()
@@ -73,7 +73,7 @@ namespace CRCCalc
 
             toolTipMain.SetToolTip(llbFormatInfo, msgHexFormatHelpString.ToString());
 
-            updater = new AutoUpdate(this);
+            updater = new AutoUpdater(this);
             updater.DoUpdate(false);
         }
 
@@ -187,7 +187,7 @@ namespace CRCCalc
         }
 
 
-        #region AutoUpdater
+        #region AutoUpdate
         public string ApplicationName
         {
             get { return "CRCCalc"; }

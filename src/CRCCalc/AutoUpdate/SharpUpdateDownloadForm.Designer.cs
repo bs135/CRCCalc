@@ -1,4 +1,4 @@
-﻿namespace AutoUpdater
+﻿namespace AutoUpdate
 {
     partial class SharpUpdateDownloadForm
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AutoUpdater
+namespace AutoUpdate
 {
     /// <summary>
     /// Form to show details about the update
@@ -11,7 +11,7 @@ namespace AutoUpdater
         /// <summary>
         /// Creates a new SharpUpdateInfoForm
         /// </summary>
-        internal SharpUpdateInfoForm(IAutoUpdatable applicationInfo, SharpUpdateXml updateInfo)
+        internal SharpUpdateInfoForm(IAutoUpdatable applicationInfo, AutoUpdateXml updateInfo)
         {
             InitializeComponent();
 
