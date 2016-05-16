@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<sharpUpdate>
+    <update appID="CRCCalc">
+        <version>2.0.0</version>
+        <url>https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.0/CRCCalc.exe</url>
+        <fileName>CRCCalc.exe</fileName>
+        <md5>F16F9270971EAEAE8E313B32E8FF0814</md5>
+        <description>
+          Update: 2016/05/16:
+          1. Improve performance.</description>
+        <launchArgs></launchArgs>
+    </update>
+</sharpUpdate>

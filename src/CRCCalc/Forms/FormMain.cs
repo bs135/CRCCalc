@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AutoUpdater;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -11,11 +13,11 @@ using System.Windows.Forms;
 
 namespace CRCCalc
 {
-    public partial class FormMain : Form
+    public partial class FormMain : Form, IAutoUpdatable
     {
         CRC16 crc16 = new CRC16(ECrcInitialValue.Zeros, ECrcPolynomial.CRC16_IBM, false);
         StringBuilder msgHexFormatHelpString = new StringBuilder();
-
+        private AutoUpdate updater;
 
         public FormMain()
         {
@@ -69,6 +71,9 @@ namespace CRCCalc
             msgHexFormatHelpString.AppendLine("[3]   123cafe");
 
             toolTipMain.SetToolTip(llbFormatInfo, msgHexFormatHelpString.ToString());
+
+            updater = new AutoUpdate(this);
+            updater.DoUpdate();
         }
 
         private void cmbPolynomial_SelectedIndexChanged(object sender, EventArgs e)
@@ -180,5 +185,42 @@ namespace CRCCalc
             MessageBox.Show(msgHexFormatHelpString.ToString());
         }
 
+
+        #region AutoUpdater
+        public string ApplicationName
+        {
+            get { return "CRCCalc"; }
+        }
+
+        public string ApplicationID
+        {
+            get { return "CRCCalc"; }
+        }
+
+        public Assembly ApplicationAssembly
+        {
+            get { return Assembly.GetExecutingAssembly(); }
+        }
+
+        public Icon ApplicationIcon
+        {
+            get { return this.Icon; }
+        }
+
+        public Uri UpdateXmlLocation
+        {
+            get { return new Uri("https://raw.githubusercontent.com/bs135/CRCCalc/master/ReleaseDownload/appinfo.xml"); }
+        }
+
+        public Form Context
+        {
+            get { return this; }
+        }
+        #endregion
+
+        private void llbCheckupdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            updater.DoUpdate();
+        }
     }
 }
