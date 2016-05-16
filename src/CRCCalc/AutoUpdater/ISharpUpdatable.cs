@@ -37,5 +37,7 @@ namespace AutoUpdater
         /// Console Apps, reference System.Windows.Forms and return null.
         /// </summary>
         Form Context { get; }
+
+        Boolean ShowMessage { get; set; }
     }
 }

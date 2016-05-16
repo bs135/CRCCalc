@@ -18,6 +18,7 @@ namespace CRCCalc
         CRC16 crc16 = new CRC16(ECrcInitialValue.Zeros, ECrcPolynomial.CRC16_IBM, false);
         StringBuilder msgHexFormatHelpString = new StringBuilder();
         private AutoUpdate updater;
+        bool showMessage = false;
 
         public FormMain()
         {
@@ -73,7 +74,7 @@ namespace CRCCalc
             toolTipMain.SetToolTip(llbFormatInfo, msgHexFormatHelpString.ToString());
 
             updater = new AutoUpdate(this);
-            updater.DoUpdate();
+            updater.DoUpdate(false);
         }
 
         private void cmbPolynomial_SelectedIndexChanged(object sender, EventArgs e)
@@ -221,6 +222,19 @@ namespace CRCCalc
         private void llbCheckupdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             updater.DoUpdate();
+        }
+
+
+        public bool ShowMessage
+        {
+            get
+            {
+                return showMessage;
+            }
+            set
+            {
+                showMessage = value;
+            }
         }
     }
 }

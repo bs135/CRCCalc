@@ -41,8 +41,10 @@ namespace AutoUpdater
         /// Checks for an update for the program passed.
         /// If there is an update, a dialog asking to download will appear
         /// </summary>
-        public void DoUpdate()
+        public void DoUpdate(bool showMessage = true)
         {
+            this.applicationInfo.ShowMessage = showMessage;
+
             if (!this.bgWorker.IsBusy)
                 this.bgWorker.RunWorkerAsync(this.applicationInfo);
         }
@@ -58,7 +60,7 @@ namespace AutoUpdater
 			if (!SharpUpdateXml.ExistsOnServer(application.UpdateXmlLocation))
 				e.Cancel = true;
 			else // Parse update xml
-				e.Result = SharpUpdateXml.Parse(application.UpdateXmlLocation, application.ApplicationID);
+				e.Result = SharpUpdateXml.Parse(application.UpdateXmlLocation, application.ApplicationID, application.ShowMessage);
         }
 
         /// <summary>
@@ -79,10 +81,12 @@ namespace AutoUpdater
 						this.DownloadUpdate(update); // Do the update
 				}
 				else
-					MessageBox.Show("You have the latest version already!");
+                    if(this.applicationInfo.ShowMessage)
+					    MessageBox.Show("You have the latest version already!");
 			}
 			else
-				MessageBox.Show("No update information found!");
+                if (this.applicationInfo.ShowMessage)
+                    MessageBox.Show("No update information found!");
         }
 
         /// <summary>

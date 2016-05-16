@@ -1,15 +1,22 @@
 <?xml version="1.0"?>
 <sharpUpdate>
     <update appID="CRCCalc">
-        <version>2.0.0</version>
-        <url>https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.0/CRCCalc.exe</url>
+        <version>1.0.2</version>
+        <url>https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.2/CRCCalc.exe</url>
         <fileName>CRCCalc.exe</fileName>
         <md5>F16F9270971EAEAE8E313B32E8FF0814</md5>
         <description>
           Update:
-          v1.0.1 - 2016/05/16:
+          v1.0.2 - 2016/05/16:
+          1. Improve auto-update
+
+          v1.0.1 - 2016/05/13:
           1. Improve performance.
           2. Support new hex format
+
+          v1.0.0 - 2016/05/01:
+          1. First release
+
         </description>
         <launchArgs></launchArgs>
     </update>

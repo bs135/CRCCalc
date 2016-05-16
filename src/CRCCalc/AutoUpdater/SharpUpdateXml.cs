@@ -16,6 +16,7 @@ namespace AutoUpdater
         private string md5;
         private string description;
         private string launchArgs;
+        private bool showMessage;
 
         /// <summary>
         /// The update version #
@@ -67,9 +68,17 @@ namespace AutoUpdater
         }
 
         /// <summary>
+        ///
+        /// </summary>
+        internal bool ShowMessage
+        {
+            get { return this.showMessage; }
+        }
+
+        /// <summary>
         /// Creates a new SharpUpdateXml object
         /// </summary>
-        internal SharpUpdateXml(Version version, Uri uri, string fileName, string md5, string description, string launchArgs)
+        internal SharpUpdateXml(Version version, Uri uri, string fileName, string md5, string description, string launchArgs, bool showMessage)
         {
             this.version = version;
             this.uri = uri;
@@ -77,6 +86,7 @@ namespace AutoUpdater
             this.md5 = md5;
             this.description = description;
             this.launchArgs = launchArgs;
+            this.showMessage = showMessage;
         }
 
         /// <summary>
@@ -115,7 +125,7 @@ namespace AutoUpdater
         /// <param name="location">Uri of update.xml on server</param>
         /// <param name="appID">The application's ID</param>
         /// <returns>The SharpUpdateXml object with the data, or null of any errors</returns>
-        internal static SharpUpdateXml Parse(Uri location, string appID)
+        internal static SharpUpdateXml Parse(Uri location, string appID, bool showMessage)
         {
             Version version = null;
             string url = "", fileName = "", md5 = "", description = "", launchArgs = "";
@@ -143,7 +153,7 @@ namespace AutoUpdater
                 description = updateNode["description"].InnerText;
                 launchArgs = updateNode["launchArgs"].InnerText;
 
-				return new SharpUpdateXml(version, new Uri(url), fileName, md5, description, launchArgs);
+                return new SharpUpdateXml(version, new Uri(url), fileName, md5, description, launchArgs, showMessage);
             }
 			catch { return null; }
         }
