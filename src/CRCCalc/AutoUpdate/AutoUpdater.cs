@@ -22,7 +22,7 @@ namespace AutoUpdate
         private BackgroundWorker bgWorker;
 
         /// <summary>
-        /// Creates a new AutoUpdate object
+        /// Creates a new AutoUpdater object
         /// </summary>
         /// <param name="applicationName">The name of the application so it can be displayed on dialog boxes to user</param>
         /// <param name="appId">A unique Id for the application, same as in update xml</param>
@@ -41,10 +41,9 @@ namespace AutoUpdate
         /// Checks for an update for the program passed.
         /// If there is an update, a dialog asking to download will appear
         /// </summary>
-        public void DoUpdate(bool showMessage = true)
+        public void DoUpdate(bool showMsg = true)
         {
-            this.applicationInfo.ShowMessage = showMessage;
-
+            this.applicationInfo.ShowMsg = showMsg;
             if (!this.bgWorker.IsBusy)
                 this.bgWorker.RunWorkerAsync(this.applicationInfo);
         }
@@ -60,7 +59,7 @@ namespace AutoUpdate
 			if (!AutoUpdateXml.ExistsOnServer(application.UpdateXmlLocation))
 				e.Cancel = true;
 			else // Parse update xml
-				e.Result = AutoUpdateXml.Parse(application.UpdateXmlLocation, application.ApplicationID, application.ShowMessage);
+				e.Result = AutoUpdateXml.Parse(application.UpdateXmlLocation, application.ApplicationID);
         }
 
         /// <summary>
@@ -69,23 +68,23 @@ namespace AutoUpdate
         private void bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             // If there is a file on the server
-			if (!e.Cancelled)
-			{
-				AutoUpdateXml update = (AutoUpdateXml)e.Result;
+            if (!e.Cancelled)
+            {
+                AutoUpdateXml update = (AutoUpdateXml)e.Result;
 
-				// Check if the update is not null and is a newer version than the current application
-				if (update != null && update.IsNewerThan(this.applicationInfo.ApplicationAssembly.GetName().Version))
-				{
-					// Ask to accept the update
-					if (new SharpUpdateAcceptForm(this.applicationInfo, update).ShowDialog(this.applicationInfo.Context) == DialogResult.Yes)
-						this.DownloadUpdate(update); // Do the update
-				}
-				else
-                    if(this.applicationInfo.ShowMessage)
-					    MessageBox.Show("You have the latest version already!");
-			}
-			else
-                if (this.applicationInfo.ShowMessage)
+                // Check if the update is not null and is a newer version than the current application
+                if (update != null && update.IsNewerThan(this.applicationInfo.ApplicationAssembly.GetName().Version))
+                {
+                    // Ask to accept the update
+                    if (new AutoUpdateAcceptForm(this.applicationInfo, update).ShowDialog(this.applicationInfo.Context) == DialogResult.Yes)
+                        this.DownloadUpdate(update); // Do the update
+                }
+                else
+                    if (this.applicationInfo.ShowMsg)
+                        MessageBox.Show("You have the latest version already!");
+            }
+            else
+                if (this.applicationInfo.ShowMsg)
                     MessageBox.Show("No update information found!");
         }
 
@@ -95,7 +94,7 @@ namespace AutoUpdate
         /// <param name="update">The update xml info</param>
         private void DownloadUpdate(AutoUpdateXml update)
         {
-            SharpUpdateDownloadForm form = new SharpUpdateDownloadForm(update.Uri, update.MD5, this.applicationInfo.ApplicationIcon);
+            AutoUpdateDownloadForm form = new AutoUpdateDownloadForm(update.Uri, update.MD5, this.applicationInfo.ApplicationIcon);
             DialogResult result = form.ShowDialog(this.applicationInfo.Context);
 
             // Download update

@@ -18,7 +18,6 @@ namespace CRCCalc
         CRC16 crc16 = new CRC16(ECrcInitialValue.Zeros, ECrcPolynomial.CRC16_IBM, false);
         StringBuilder msgHexFormatHelpString = new StringBuilder();
         private AutoUpdater updater;
-        bool showMessage = false;
 
         public FormMain()
         {
@@ -185,6 +184,10 @@ namespace CRCCalc
 
             MessageBox.Show(msgHexFormatHelpString.ToString());
         }
+        private void llbCheckupdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            updater.DoUpdate();
+        }
 
 
         #region AutoUpdate
@@ -217,24 +220,21 @@ namespace CRCCalc
         {
             get { return this; }
         }
-        #endregion
 
-        private void llbCheckupdate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            updater.DoUpdate();
-        }
-
-
-        public bool ShowMessage
+        bool showMsg = false;
+        public bool ShowMsg
         {
             get
             {
-                return showMessage;
+                return showMsg;
             }
             set
             {
-                showMessage = value;
+                showMsg = value;
             }
         }
+        #endregion
+
+
     }
 }

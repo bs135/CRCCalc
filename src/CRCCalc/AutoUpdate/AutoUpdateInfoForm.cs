@@ -6,12 +6,12 @@ namespace AutoUpdate
     /// <summary>
     /// Form to show details about the update
     /// </summary>
-    internal partial class SharpUpdateInfoForm : Form
+    internal partial class AutoUpdateInfoForm : Form
     {
         /// <summary>
-        /// Creates a new SharpUpdateInfoForm
+        /// Creates a new AutoUpdateInfoForm
         /// </summary>
-        internal SharpUpdateInfoForm(IAutoUpdatable applicationInfo, AutoUpdateXml updateInfo)
+        internal AutoUpdateInfoForm(IAutoUpdatable applicationInfo, AutoUpdateXml updateInfo)
         {
             InitializeComponent();
 

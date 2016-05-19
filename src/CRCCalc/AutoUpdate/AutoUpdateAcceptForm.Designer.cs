@@ -1,6 +1,6 @@
 ﻿namespace AutoUpdate
 {
-    partial class SharpUpdateAcceptForm
+    partial class AutoUpdateAcceptForm
     {
         /// <summary>
         /// Required designer variable.
@@ -96,7 +96,7 @@
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             //
-            // SharpUpdateAcceptForm
+            // AutoUpdateAcceptForm
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,10 +111,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SharpUpdateAcceptForm";
-            this.ShowInTaskbar = false;
+            this.Name = "AutoUpdateAcceptForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "An update is available";
+            this.Text = "Update Available";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 

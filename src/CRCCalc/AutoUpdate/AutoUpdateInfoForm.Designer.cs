@@ -1,6 +1,6 @@
 ﻿namespace AutoUpdate
 {
-    partial class SharpUpdateInfoForm
+    partial class AutoUpdateInfoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -104,7 +104,7 @@
             this.panel1.Size = new System.Drawing.Size(260, 96);
             this.panel1.TabIndex = 5;
             //
-            // SharpUpdateInfoForm
+            // AutoUpdateInfoForm
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +117,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SharpUpdateInfoForm";
+            this.Name = "AutoUpdateInfoForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Update Details";

@@ -1,6 +1,6 @@
 ﻿namespace AutoUpdate
 {
-    partial class SharpUpdateDownloadForm
+    partial class AutoUpdateDownloadForm
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,7 @@
             this.lblProgress.TabIndex = 2;
             this.lblProgress.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // SharpUpdateDownloadForm
+            // AutoUpdateDownloadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,11 +72,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SharpUpdateDownloadForm";
-            this.ShowInTaskbar = false;
+            this.Name = "AutoUpdateDownloadForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Downloading Update";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SharpUpdateDownloadForm_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AutoUpdateDownloadForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

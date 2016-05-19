@@ -5,7 +5,6 @@ using System.Xml;
 
 namespace AutoUpdate
 {
-
     /// <summary>
     /// Contains update information
     /// </summary>
@@ -17,7 +16,6 @@ namespace AutoUpdate
         private string md5;
         private string description;
         private string launchArgs;
-        private bool showMessage;
 
         /// <summary>
         /// The update version #
@@ -69,17 +67,9 @@ namespace AutoUpdate
         }
 
         /// <summary>
-        ///
-        /// </summary>
-        internal bool ShowMessage
-        {
-            get { return this.showMessage; }
-        }
-
-        /// <summary>
         /// Creates a new AutoUpdateXml object
         /// </summary>
-        internal AutoUpdateXml(Version version, Uri uri, string fileName, string md5, string description, string launchArgs, bool showMessage)
+        internal AutoUpdateXml(Version version, Uri uri, string fileName, string md5, string description, string launchArgs)
         {
             this.version = version;
             this.uri = uri;
@@ -87,7 +77,6 @@ namespace AutoUpdate
             this.md5 = md5;
             this.description = description;
             this.launchArgs = launchArgs;
-            this.showMessage = showMessage;
         }
 
         /// <summary>
@@ -126,7 +115,7 @@ namespace AutoUpdate
         /// <param name="location">Uri of update.xml on server</param>
         /// <param name="appID">The application's ID</param>
         /// <returns>The AutoUpdateXml object with the data, or null of any errors</returns>
-        internal static AutoUpdateXml Parse(Uri location, string appID, bool showMessage)
+        internal static AutoUpdateXml Parse(Uri location, string appID)
         {
             Version version = null;
             string url = "", fileName = "", md5 = "", description = "", launchArgs = "";
@@ -154,7 +143,7 @@ namespace AutoUpdate
                 description = updateNode["description"].InnerText;
                 launchArgs = updateNode["launchArgs"].InnerText;
 
-                return new AutoUpdateXml(version, new Uri(url), fileName, md5, description, launchArgs, showMessage);
+				return new AutoUpdateXml(version, new Uri(url), fileName, md5, description, launchArgs);
             }
 			catch { return null; }
         }

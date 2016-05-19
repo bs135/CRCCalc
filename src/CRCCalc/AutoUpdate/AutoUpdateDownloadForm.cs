@@ -10,7 +10,7 @@ namespace AutoUpdate
     /// <summary>
     /// Form that download the update
     /// </summary>
-    internal partial class SharpUpdateDownloadForm : Form
+    internal partial class AutoUpdateDownloadForm : Form
     {
         /// <summary>
         /// The web client to download the update
@@ -41,9 +41,9 @@ namespace AutoUpdate
         }
 
         /// <summary>
-        /// Creates a new SharpUpdateDownloadForm
+        /// Creates a new AutoUpdateDownloadForm
         /// </summary>
-        internal SharpUpdateDownloadForm(Uri location, string md5, Icon programIcon)
+        internal AutoUpdateDownloadForm(Uri location, string md5, Icon programIcon)
         {
             InitializeComponent();
 
@@ -171,7 +171,7 @@ namespace AutoUpdate
             this.Close();
         }
 
-        private void SharpUpdateDownloadForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void AutoUpdateDownloadForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (webClient.IsBusy)
             {

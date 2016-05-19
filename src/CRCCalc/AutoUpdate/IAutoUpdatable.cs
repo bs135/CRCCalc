@@ -38,8 +38,8 @@ namespace AutoUpdate
         /// </summary>
         Form Context { get; }
         /// <summary>
-        ///
+        /// Show ShowMsg
         /// </summary>
-        Boolean ShowMessage { get; set; }
+        bool ShowMsg { get; set; }
     }
 }

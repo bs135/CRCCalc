@@ -6,7 +6,7 @@ namespace AutoUpdate
     /// <summary>
     /// Form to prompt the user to accept the update
     /// </summary>
-    internal partial class SharpUpdateAcceptForm : Form
+    internal partial class AutoUpdateAcceptForm : Form
     {
         /// <summary>
         /// The program to update's info
@@ -21,14 +21,14 @@ namespace AutoUpdate
         /// <summary>
         /// The update info display form
         /// </summary>
-        private SharpUpdateInfoForm updateInfoForm;
+        private AutoUpdateInfoForm updateInfoForm;
 
         /// <summary>
-        /// Creates a new SharpUpdateAcceptForm
+        /// Creates a new AutoUpdateAcceptForm
         /// </summary>
         /// <param name="applicationInfo"></param>
         /// <param name="updateInfo"></param>
-        internal SharpUpdateAcceptForm(IAutoUpdatable applicationInfo, AutoUpdateXml updateInfo)
+        internal AutoUpdateAcceptForm(IAutoUpdatable applicationInfo, AutoUpdateXml updateInfo)
         {
             InitializeComponent();
 
@@ -60,7 +60,7 @@ namespace AutoUpdate
         private void btnDetails_Click(object sender, EventArgs e)
         {
             if (this.updateInfoForm == null)
-                this.updateInfoForm = new SharpUpdateInfoForm(this.applicationInfo, this.updateInfo);
+                this.updateInfoForm = new AutoUpdateInfoForm(this.applicationInfo, this.updateInfo);
 
             // Shows the details form
             this.updateInfoForm.ShowDialog(this);
