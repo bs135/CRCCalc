@@ -1,6 +1,17 @@
 ### CRCCalc
 CRC calculator
 
+### Download
+- [v1.0.0](https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.0/CRCCalc.exe)
+- [v1.0.1](https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.1/CRCCalc.exe)
+- [v1.0.2](https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.2/CRCCalc.exe)
+- [v1.0.3](https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.3/CRCCalc.exe)
+- [v1.0.4](https://github.com/bs135/CRCCalc/raw/master/ReleaseDownload/v1.0.4/CRCCalc.exe)
+
+### Screenshot
+
+![Screenshot](https://github.com/bs135/CRCCalc/raw/master/ScreenShot/Screenshot%202016-05-18%2023.51.33.png)
+
 ### Feature
 
 #### Support CRC calculator
@@ -22,6 +33,12 @@ CRC calculator
 
 
 ### Update history:
+###### v1.0.4 - 2016/05/19:
+1. Improve performance.
+2. Improve auto-update
+
+###### v1.0.3 - 2016/05/16:
+1. Improve performance.
 
 ###### v1.0.2 - 2016/05/16:
 1. Improve auto-update
