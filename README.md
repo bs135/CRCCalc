@@ -1,3 +1,5 @@
+![Version](https://img.shields.io/github/release/bs135/CRCCalc.svg?style=plastic)
+
 ### CRCCalc
 CRC calculator
 
